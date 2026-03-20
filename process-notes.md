@@ -2,6 +2,13 @@
 
 ## /build
 
+### Step 3: Database layer — all Supabase functions in database.py
+- Built: All 7 functions in database.py (get_client, fetch_items, add_item, update_item, delete_item, restore_item, perm_delete_item). Basic app.py with st.write() to test connection.
+- Verification: Browser showed empty list [] with no errors.
+- Knowledge check answer: "so that database errors are easier to find" — correct.
+- Issues: secrets.toml values were missing quotes (TOML format requires strings in quotes). Fixed by wrapping values in double quotes.
+- Learner engagement: Ran commands in chat instead of terminal — now understood the agent runs them directly.
+
 ### Step 2: Supabase table setup and credentials
 - Built: inventory table created in Supabase with all 8 columns. Credentials added to secrets.toml.
 - Verification: Test row inserted and appeared in Table Editor. Row deleted successfully.

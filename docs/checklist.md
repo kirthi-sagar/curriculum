@@ -20,7 +20,7 @@
   Acceptance: Table exists in Supabase with all 8 columns. `secrets.toml` has both values filled in.
   Verify: In the Supabase Table Editor, manually insert one test row. Confirm it appears in the table. Delete the test row.
 
-- [ ] **3. Database layer — all Supabase functions in database.py**
+- [x] **3. Database layer — all Supabase functions in database.py**
   Spec ref: `spec.md > Database Layer — database.py`
   What to build: Write all 6 functions in `database.py`: `get_client()`, `fetch_items(is_deleted)`, `add_item(name, category, quantity, price, threshold)`, `update_item(item_id, name, category, quantity, price, threshold)`, `delete_item(item_id)`, `restore_item(item_id)`, `perm_delete_item(item_id)`. Add a basic `app.py` that imports `database.py`, calls `fetch_items(is_deleted=False)`, and prints the result with `st.write()`.
   Acceptance: `app.py` runs without errors. `st.write()` shows an empty list `[]` (since no items exist yet). No connection errors.
