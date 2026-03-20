@@ -26,7 +26,7 @@
   Acceptance: `app.py` runs without errors. `st.write()` shows an empty list `[]` (since no items exist yet). No connection errors.
   Verify: Run `streamlit run app.py`. Confirm the browser shows an empty list with no error messages.
 
-- [ ] **4. Inventory dashboard — item list, low stock alerts, and row highlighting**
+- [x] **4. Inventory dashboard — item list, low stock alerts, and row highlighting**
   Spec ref: `spec.md > UI Layer — app.py > Inventory Dashboard`
   What to build: Build the main inventory view in `app.py`. Fetch all active items (`is_deleted=False`). If inventory is empty, show: "No items yet! Add your first product to get started." If items exist, render them in a table/list showing name, category, quantity, price, and threshold. Add the Low Stock Alert section at the top — only shown when at least one item has `quantity <= threshold`. Highlight low-stock rows using custom CSS injected with `st.markdown()`. Use saffron orange (`#FF9933`) and green (`#138808`) as accent colors.
   Acceptance: Matches `prd.md > Viewing Inventory` acceptance criteria. Empty state message shows when no items exist. Low stock section appears/disappears correctly. Low-stock rows change color.

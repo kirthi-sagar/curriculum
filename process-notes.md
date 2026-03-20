@@ -2,6 +2,13 @@
 
 ## /build
 
+### Step 4: Inventory dashboard — item list, low stock alerts, and row highlighting
+- Built: Full inventory dashboard with column headers, per-row color highlighting (orange/red for low stock), Low Stock Alert section at top, header with GrocerFlow branding and tagline.
+- Verification: Basmati Rice (qty 8, threshold 10) showed highlighted in orange/red and appeared in Low Stock Alert section. Amul Butter (qty 15, threshold 5) showed normally.
+- Knowledge check answer: "when quantity goes above the threshold" — correct.
+- Issues: Typo in CSS class string (`{row_style"` missing closing brace) caught and fixed before running.
+- Learner engagement: None flagged.
+
 ### Step 3: Database layer — all Supabase functions in database.py
 - Built: All 7 functions in database.py (get_client, fetch_items, add_item, update_item, delete_item, restore_item, perm_delete_item). Basic app.py with st.write() to test connection.
 - Verification: Browser showed empty list [] with no errors.
