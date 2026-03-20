@@ -107,3 +107,7 @@ The Android app is a real stretch goal: it would require a different stack (Reac
 - /build: 11/12 checklist items completed (Step 12 skipped — not a Devpost submission)
 - /iterate: skipped
 - /evaluate: complete
+
+## Live App
+
+https://dp-grocerflow.streamlit.app
