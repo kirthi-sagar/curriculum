@@ -2,6 +2,13 @@
 
 ## /build
 
+### Step 5: Welcome screen — first-run detection and onboarding banner
+- Built: Welcome banner with 3-step guide and "Get Started" button. Shows only when inventory is empty. Dismissed via session_state. Skipped entirely when items exist.
+- Verification: Banner appeared on empty inventory. "Get Started" dismissed to empty dashboard. Adding a row in Supabase and refreshing kept banner hidden.
+- Knowledge check answer: "Do not know. May to keep the app minimal?" — gap filled: banner is a first-run experience, showing it to returning owners would be annoying.
+- Issues: None.
+- Learner engagement: Flagged that editing in the live app doesn't work yet — acknowledged that Edit/Delete wiring comes in Steps 6-8.
+
 ### Step 4: Inventory dashboard — item list, low stock alerts, and row highlighting
 - Built: Full inventory dashboard with column headers, per-row color highlighting (orange/red for low stock), Low Stock Alert section at top, header with GrocerFlow branding and tagline.
 - Verification: Basmati Rice (qty 8, threshold 10) showed highlighted in orange/red and appeared in Low Stock Alert section. Amul Butter (qty 15, threshold 5) showed normally.

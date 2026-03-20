@@ -28,6 +28,28 @@ st.markdown('<div class="header-tagline">Powering your Kirana, digitally.</div>'
 # ── Fetch active inventory ────────────────────────────────────────────────────
 items = database.fetch_items(is_deleted=False)
 
+# ── Welcome screen (first-run only) ──────────────────────────────────────────
+if "show_welcome" not in st.session_state:
+    st.session_state.show_welcome = True
+
+if not items and st.session_state.show_welcome:
+    st.markdown("""
+    <div style="background-color:#fff8f0; border:2px solid #FF9933; border-radius:12px;
+                padding:2rem; margin-bottom:2rem;">
+        <h2 style="color:#FF9933;">👋 Welcome to GrocerFlow!</h2>
+        <p style="font-size:1.1rem;">Here's how to get started:</p>
+        <ol style="font-size:1.05rem; line-height:2;">
+            <li>➕ <strong>Add your products</strong> — name, category, price and quantity</li>
+            <li>📦 <strong>View your stock</strong> — see everything at a glance</li>
+            <li>✏️ <strong>Update or remove items</strong> — keep your inventory accurate</li>
+        </ol>
+    </div>
+    """, unsafe_allow_html=True)
+    if st.button("🚀 Get Started", type="primary"):
+        st.session_state.show_welcome = False
+        st.rerun()
+    st.stop()
+
 # ── Low Stock Alert section ───────────────────────────────────────────────────
 low_stock_items = [i for i in items if i["quantity"] <= i["threshold"]]
 

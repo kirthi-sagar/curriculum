@@ -32,7 +32,7 @@
   Acceptance: Matches `prd.md > Viewing Inventory` acceptance criteria. Empty state message shows when no items exist. Low stock section appears/disappears correctly. Low-stock rows change color.
   Verify: Manually insert 2 rows in Supabase (one with quantity below threshold, one above). Run the app. Confirm the low-stock row is highlighted and appears in the alert section. Confirm the normal row is not highlighted.
 
-- [ ] **5. Welcome screen — first-run detection and onboarding banner**
+- [x] **5. Welcome screen — first-run detection and onboarding banner**
   Spec ref: `spec.md > UI Layer — app.py > Welcome Screen`
   What to build: Before rendering the dashboard, check if inventory is empty. If empty AND `st.session_state.show_welcome` is not False, show the welcome banner: "Welcome to GrocerFlow! Here's how to get started:" with 3 steps listed and a "Get Started" button. Clicking the button sets `st.session_state.show_welcome = False` and reruns. If inventory has items, skip the banner entirely.
   Acceptance: Matches `prd.md > First-Run Experience` acceptance criteria. Welcome banner shows on first visit with empty inventory. "Get Started" dismisses it. Banner never shows when inventory has items.
