@@ -2,6 +2,13 @@
 
 ## /build
 
+### Step 7: Edit Item form — pre-filled form and update
+- Built: Edit button sets editing_id in session_state. Edit form pre-fills all 5 fields from current item values. Save calls update_item(), clears editing_id, reruns. Low-stock status recalculates automatically.
+- Verification: Edited Basmati Rice qty to 5 — joined Low Stock. Changed back to 50 — left Low Stock automatically.
+- Knowledge check answer: "so the owner doesn't have to retype everything" — correct.
+- Issues: None.
+- Learner engagement: None flagged.
+
 ### Step 6: Add Item form — form, validation, and save
 - Built: Add Item button, st.form() with 5 fields (name, category dropdown, quantity, price, threshold), empty name validation, save to Supabase, cancel button, success message on save.
 - Verification: Basmati Rice appeared in inventory list. Second item below threshold triggered Low Stock Alert.

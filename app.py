@@ -115,6 +115,48 @@ if st.session_state.show_add_form:
             st.session_state.show_add_form = False
             st.rerun()
 
+# ── Edit Item form ────────────────────────────────────────────────────────────
+if "editing_id" not in st.session_state:
+    st.session_state.editing_id = None
+
+if st.session_state.editing_id:
+    item_to_edit = next((i for i in items if i["id"] == st.session_state.editing_id), None)
+    if item_to_edit:
+        st.subheader(f"✏️ Editing: {item_to_edit['name']}")
+        with st.form("edit_item_form"):
+            name = st.text_input("Product Name", value=item_to_edit["name"])
+            category = st.selectbox("Category", CATEGORIES,
+                                    index=CATEGORIES.index(item_to_edit["category"])
+                                    if item_to_edit["category"] in CATEGORIES else 0)
+            quantity = st.number_input("Quantity", min_value=0.0, step=1.0,
+                                       value=float(item_to_edit["quantity"]))
+            price = st.number_input("Price (₹)", min_value=0.0, step=0.5,
+                                    value=float(item_to_edit["price"]))
+            threshold = st.number_input("Low-Stock Threshold", min_value=0, step=1,
+                                        value=int(item_to_edit["threshold"]))
+
+            col_save, col_cancel = st.columns([1, 1])
+            with col_save:
+                saved = st.form_submit_button("💾 Save Changes", type="primary")
+            with col_cancel:
+                cancelled = st.form_submit_button("Cancel")
+
+            if saved:
+                if not name.strip():
+                    st.error("Product name cannot be empty.")
+                else:
+                    database.update_item(
+                        st.session_state.editing_id,
+                        name.strip(), category, quantity, price, int(threshold)
+                    )
+                    st.session_state.editing_id = None
+                    st.success(f"✅ '{name}' updated!")
+                    st.rerun()
+
+            if cancelled:
+                st.session_state.editing_id = None
+                st.rerun()
+
 # ── Inventory list ────────────────────────────────────────────────────────────
 st.subheader("📦 Current Inventory")
 
@@ -163,6 +205,8 @@ else:
                 unsafe_allow_html=True
             )
         with col6:
-            st.button("✏️", key=f"edit_{item['id']}")
+            if st.button("✏️", key=f"edit_{item['id']}"):
+                st.session_state.editing_id = item["id"]
+                st.session_state.show_add_form = False
         with col7:
             st.button("🗑️", key=f"delete_{item['id']}")

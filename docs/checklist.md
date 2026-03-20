@@ -44,7 +44,7 @@
   Acceptance: Matches `prd.md > Adding Items` acceptance criteria. All 5 fields present. Category shows fixed dropdown. Empty name blocked. New item appears in list immediately after save.
   Verify: Run the app. Add a new item (e.g. "Basmati Rice", Grains & Staples, qty 8, ₹120, threshold 10). Confirm it appears in the inventory list. Add a second item with qty below its threshold — confirm low-stock alert appears.
 
-- [ ] **7. Edit Item form — pre-filled form and update**
+- [x] **7. Edit Item form — pre-filled form and update**
   Spec ref: `spec.md > UI Layer — app.py > Edit Item Form`
   What to build: Add an "Edit" button to each inventory row. Clicking sets `st.session_state.editing_id = item_id`. When `editing_id` is set, render an edit form pre-filled with that item's current values (same 5 fields). On save, call `update_item()`, clear `editing_id`, rerun. Low-stock status recalculates automatically on rerun.
   Acceptance: Matches `prd.md > Editing Items` acceptance criteria. Edit form pre-fills all current values. Changes save and reflect immediately. Changing quantity above threshold removes low-stock warning. Changing below threshold adds it.
