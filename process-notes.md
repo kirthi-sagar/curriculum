@@ -100,7 +100,7 @@
 **Item count:** 12 items, estimated ~4 hours total. Tight for a beginner but achievable.
 
 **Demo video planning:**
-- Learner initially described the full KiranaKart vision, not the GrocerFlow demo. Redirected to the actual app. Demo script provided with clear 30sec/3min/30sec structure.
+- Learner initially described the full GrocerFlow vision, not the GrocerFlow demo. Redirected to the actual app. Demo script provided with clear 30sec/3min/30sec structure.
 - "Wow moment": low-stock alert appearing automatically when quantity drops below threshold.
 
 **Active shaping:**
@@ -122,7 +122,7 @@
 
 **Active shaping:**
 - Learner deferred almost entirely to agent on architecture decisions.
-- One strong moment: when asked about the demo flow, learner pivoted to the big KiranaKart vision. Agent redirected to the actual app demo. Learner accepted the redirect and confirmed the proposed demo script.
+- One strong moment: when asked about the demo flow, learner pivoted to the big GrocerFlow vision. Agent redirected to the actual app demo. Learner accepted the redirect and confirmed the proposed demo script.
 - Category list entirely agent-compiled from web research; learner approved without changes.
 
 **Stack:** Python 3.10+ / Streamlit 1.55.0 / supabase-py 2.28.2 / Supabase free tier / Streamlit Community Cloud
@@ -158,10 +158,10 @@
 ## /scope
 
 **How the idea evolved:**
-Learner arrived with a well-developed concept — GrocerFlow/KiranaKart — complete with a full ecosystem vision (customers, wholesalers, analytics, bidding, monetization strategy, even a brand manifesto). The broader vision is genuinely impressive and mission-driven: empower local Kirana stores without taking commission. Through conversation, the learner self-selected the right MVP slice: basic inventory management only. The project name settled on GrocerFlow for the hackathon MVP.
+Learner arrived with a well-developed concept — GrocerFlow/GrocerFlow — complete with a full ecosystem vision (customers, wholesalers, analytics, bidding, monetization strategy, even a brand manifesto). The broader vision is genuinely impressive and mission-driven: empower local Kirana stores without taking commission. Through conversation, the learner self-selected the right MVP slice: basic inventory management only. The project name settled on GrocerFlow for the hackathon MVP.
 
 **Pushback received:**
-- The KiranaKart doc revealed a 2-year roadmap. Learner was gently redirected: "this is a 2-year roadmap, not a 3-4 hour hackathon." Learner accepted this without resistance — they had already pre-scoped it correctly in their opening message.
+- The GrocerFlow doc revealed a 2-year roadmap. Learner was gently redirected: "this is a 2-year roadmap, not a 3-4 hour hackathon." Learner accepted this without resistance — they had already pre-scoped it correctly in their opening message.
 - Several features explicitly cut: customer ordering, wholesaler bidding, analytics, barcode scanning, auth, multi-store. Learner had already intuited most of these cuts.
 
 **References that resonated:**

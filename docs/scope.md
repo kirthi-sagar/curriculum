@@ -30,7 +30,7 @@ The app opens in a browser, looks colorful and modern, and works end-to-end with
 
 ## What's Explicitly Cut
 - **Customer-facing ordering** — out. This is a store owner tool only.
-- **Wholesaler bidding** — out. Belongs to the full KiranaKart vision, not this MVP.
+- **Wholesaler bidding** — out. Belongs to the full GrocerFlow vision, not this MVP.
 - **Analytics & insights dashboard** — out. No behavioral data, no charts, no market intelligence.
 - **Barcode/QR scanning** — out. Valuable feature, but requires hardware integration; too complex for 3-4 hours.
 - **User authentication/login** — out. Single-user local app, no accounts needed.

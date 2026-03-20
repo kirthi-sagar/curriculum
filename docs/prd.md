@@ -85,7 +85,7 @@ These are explicitly out of scope for this build:
 - **Authentication/login** — no signup, no email, no Google, no Clerk. The app opens directly to the dashboard. A single-user local tool doesn't need accounts.
 - **Customer-facing ordering** — GrocerFlow is a store owner tool only. No customer browsing or checkout.
 - **Barcode/QR scanning** — valuable but requires hardware integration; out of scope for a 3-4 hour build.
-- **Analytics & reporting** — no charts, no demand trends, no behavioral insights. That belongs to the full KiranaKart vision.
+- **Analytics & reporting** — no charts, no demand trends, no behavioral insights. That belongs to the full GrocerFlow vision.
 - **Multi-store support** — one store, one owner, one inventory list.
 
 ## Open Questions
