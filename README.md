@@ -1,3 +1,11 @@
+# GrocerFlow
+
+**Live app:** https://dp-grocerflow.streamlit.app
+
+A Kirana store inventory management tool — built with Python, Streamlit, and Supabase. Track stock, get low-stock alerts, and manage items with a soft delete/restore flow.
+
+---
+
 # devpost-curriculum
 
 A hackathon curriculum that guides you from idea spark to working app in 3–4 hours, delivered as seven agent commands.
