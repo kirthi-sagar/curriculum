@@ -2,6 +2,13 @@
 
 ## /build
 
+### Step 10: Styling polish — colors, CSS, and final visual touches
+- Built: Upgraded CSS with gradient header (saffron to light gold), light page background (#F8F9FF), light amber low-stock rows (border-left accent instead of dark background), diversified color palette, button hover effects, expander styling.
+- Verification: Learner reported "looking good." Low-stock rows now draw attention without being too dark.
+- Knowledge check answer: "so we could focus on making it work first" — correct.
+- Issues: Learner gave active feedback mid-step — initial low-stock row color (#FF6B35 dark) was too aggressive. Adjusted to light amber (#FFF0E0) with orange border-left and dark brown text. Good example of learner steering design decisions.
+- Learner engagement: Strong — gave specific visual feedback and requested lighter, diversified colors. This was the most active design steering of the entire build.
+
 ### Step 9: Deleted Items section — view, restore, and permanent delete
 - Built: st.expander("Deleted Items") fetching is_deleted=True items. Restore button calls restore_item(). Delete Forever sets confirm_perm_delete_id, shows second confirmation, calls perm_delete_item() on confirm.
 - Verification: Deleted item appeared in expander. Restore moved it back to active inventory. Delete Forever with second confirmation removed it completely from Supabase.

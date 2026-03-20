@@ -10,20 +10,70 @@ st.set_page_config(page_title="GrocerFlow", page_icon="🛒", layout="wide")
 # ── Custom CSS ────────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
-    .header-title { font-size: 2rem; font-weight: 800; color: #FF9933; }
-    .header-tagline { font-size: 1rem; color: #138808; margin-bottom: 1.5rem; }
-    .low-stock-row { background-color: #FF6B35; color: white; padding: 0.4rem 0.8rem;
-                     border-radius: 6px; margin-bottom: 0.3rem; }
-    .normal-row { background-color: #f9f9f9; padding: 0.4rem 0.8rem;
-                  border-radius: 6px; margin-bottom: 0.3rem; }
-    .alert-box { background-color: #fff3cd; border-left: 4px solid #FF9933;
-                 padding: 0.8rem 1rem; border-radius: 6px; margin-bottom: 1rem; }
+    /* Page background */
+    .stApp { background-color: #F8F9FF; }
+
+    /* Header */
+    .header-banner {
+        background: linear-gradient(135deg, #FF9933 0%, #FFBB55 100%);
+        padding: 1.5rem 2rem; border-radius: 14px; margin-bottom: 1.5rem;
+        box-shadow: 0 4px 12px rgba(255,153,51,0.2);
+    }
+    .header-title { font-size: 2.4rem; font-weight: 900; color: white;
+                    letter-spacing: -0.5px; margin: 0; }
+    .header-tagline { font-size: 1rem; color: rgba(255,255,255,0.9);
+                      margin: 0.2rem 0 0 0; }
+
+    /* Inventory rows */
+    .low-stock-row {
+        background-color: #FFF0E0; color: #994400;
+        padding: 0.45rem 0.8rem; border-radius: 8px;
+        margin-bottom: 0.25rem; font-weight: 600;
+        border-left: 4px solid #FF9933;
+    }
+    .normal-row {
+        background-color: #ffffff; color: #333333;
+        padding: 0.45rem 0.8rem; border-radius: 8px;
+        margin-bottom: 0.25rem; border: 1px solid #EEF0F5;
+    }
+
+    /* Low stock alert box */
+    .alert-box {
+        background-color: #FFFBF0;
+        border-left: 5px solid #FFAA33;
+        padding: 0.9rem 1.2rem; border-radius: 8px;
+        margin-bottom: 1.2rem; font-size: 1.05rem; color: #7A4800;
+    }
+
+    /* Buttons */
+    .stButton > button {
+        border-radius: 8px; font-weight: 600;
+        transition: transform 0.1s ease;
+    }
+    .stButton > button:hover { transform: scale(1.03); }
+
+    /* Section subheaders */
+    h2, h3 { color: #333333 !important; }
+
+    /* Expander */
+    .streamlit-expanderHeader {
+        background-color: #F5F5F5 !important;
+        border-radius: 8px !important;
+        font-weight: 600 !important;
+    }
+
+    /* Divider */
+    hr { border-color: #EEEEEE; }
 </style>
 """, unsafe_allow_html=True)
 
 # ── Header ────────────────────────────────────────────────────────────────────
-st.markdown('<div class="header-title">🛒 GrocerFlow</div>', unsafe_allow_html=True)
-st.markdown('<div class="header-tagline">Powering your Kirana, digitally.</div>', unsafe_allow_html=True)
+st.markdown("""
+<div class="header-banner">
+    <div class="header-title">🛒 GrocerFlow</div>
+    <div class="header-tagline">Powering your Kirana, digitally.</div>
+</div>
+""", unsafe_allow_html=True)
 
 # ── Fetch active inventory ────────────────────────────────────────────────────
 items = database.fetch_items(is_deleted=False)
@@ -57,7 +107,7 @@ if low_stock_items:
     st.markdown('<div class="alert-box"><strong>⚠️ Low Stock Alert</strong></div>', unsafe_allow_html=True)
     for item in low_stock_items:
         st.markdown(
-            f'<div class="low-stock-row">🔴 <strong>{item["name"]}</strong> — '
+            f'<div class="low-stock-row">🟠 <strong>{item["name"]}</strong> — '
             f'Qty: {item["quantity"]} (threshold: {item["threshold"]})</div>',
             unsafe_allow_html=True
         )

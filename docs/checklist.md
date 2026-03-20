@@ -62,7 +62,7 @@
   Acceptance: Matches `prd.md > Deleting Items` (restore and permanent delete). Deleted items section shows/hides correctly. Restore moves item back to active inventory. Permanent delete removes it completely with second confirmation.
   Verify: Open Deleted Items expander — confirm deleted item is listed. Click Restore — confirm item reappears in active inventory. Delete it again, then Delete Permanently — confirm it's gone from Supabase entirely.
 
-- [ ] **10. Styling polish — colors, CSS, and final visual touches**
+- [x] **10. Styling polish — colors, CSS, and final visual touches**
   Spec ref: `spec.md > UI Layer — app.py > Styling`
   What to build: Inject custom CSS via `st.markdown("<style>...</style>", unsafe_allow_html=True)`. Apply: saffron orange (`#FF9933`) and green (`#138808`) as accent colors. Low-stock row background: orange-red (`#FF6B35`). Add a header with "GrocerFlow" in bold and tagline "Powering your Kirana, digitally." Clean up button styles and spacing. Make the app feel colorful and modern — not like a spreadsheet.
   Acceptance: App looks colorful and lively. Header is visible. Low-stock rows stand out clearly. Overall aesthetic matches the design energy from `scope.md > Inspiration & References`.
