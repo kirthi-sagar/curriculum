@@ -68,7 +68,7 @@
   Acceptance: App looks colorful and lively. Header is visible. Low-stock rows stand out clearly. Overall aesthetic matches the design energy from `scope.md > Inspiration & References`.
   Verify: Run the app with a mix of normal and low-stock items. Take a screenshot. Does it look like a modern app a Kirana owner would be proud to use?
 
-- [ ] **11. Deploy to Streamlit Community Cloud**
+- [x] **11. Deploy to Streamlit Community Cloud**
   Spec ref: `spec.md > Runtime & Deployment`
   What to build: Push the final code to GitHub (confirm `secrets.toml` is NOT in the commit). Go to [share.streamlit.io](https://share.streamlit.io), connect the GitHub repo, and deploy. In the Streamlit Cloud dashboard, go to App Settings > Secrets and add `SUPABASE_URL` and `SUPABASE_KEY`. Wait for the deploy to complete.
   Acceptance: App is live at a public `streamlit.app` URL. All features work identically to local. Data persists across browser sessions.

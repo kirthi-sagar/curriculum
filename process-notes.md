@@ -2,6 +2,13 @@
 
 ## /build
 
+### Step 11: Deploy to Streamlit Community Cloud
+- Built: App deployed to Streamlit Community Cloud from kirthi-sagar/curriculum repo. Supabase secrets added via dashboard (not committed to GitHub). App live at public streamlit.app URL.
+- Verification: Tested on different devices — data persists across sessions. Mobile browser layout not fully responsive (known Streamlit limitation, acceptable for desktop-first tool).
+- Knowledge check answer: "So that public cannot get the access to my data base" — correct.
+- Issues: Mobile responsiveness noted as limitation. Learner requested Android app — redirected as out of scope for hackathon.
+- Learner engagement: Proactive testing across devices shows strong ownership of the product.
+
 ### Step 10: Styling polish — colors, CSS, and final visual touches
 - Built: Upgraded CSS with gradient header (saffron to light gold), light page background (#F8F9FF), light amber low-stock rows (border-left accent instead of dark background), diversified color palette, button hover effects, expander styling.
 - Verification: Learner reported "looking good." Low-stock rows now draw attention without being too dark.
