@@ -38,7 +38,7 @@
   Acceptance: Matches `prd.md > First-Run Experience` acceptance criteria. Welcome banner shows on first visit with empty inventory. "Get Started" dismisses it. Banner never shows when inventory has items.
   Verify: Clear the Supabase table. Run the app. Confirm welcome banner appears. Click "Get Started" — confirm it goes to the empty dashboard. Add a row in Supabase, refresh the app — confirm banner does not show.
 
-- [ ] **6. Add Item form — form, validation, and save**
+- [x] **6. Add Item form — form, validation, and save**
   Spec ref: `spec.md > UI Layer — app.py > Add Item Form`
   What to build: Add an "Add Item" button to the dashboard. Clicking it opens a `st.form()` with 5 fields: Name (`st.text_input`), Category (`st.selectbox` with the 11 CATEGORIES list from `spec.md`), Quantity (`st.number_input`, min 0), Price in ₹ (`st.number_input`, min 0.0), Low-Stock Threshold (`st.number_input`, min 0). Validate that Name is not empty before submitting. On submit, call `add_item()`, then rerun the app to refresh the list.
   Acceptance: Matches `prd.md > Adding Items` acceptance criteria. All 5 fields present. Category shows fixed dropdown. Empty name blocked. New item appears in list immediately after save.

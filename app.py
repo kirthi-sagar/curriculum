@@ -63,6 +63,58 @@ if low_stock_items:
         )
     st.write("")
 
+# ── Categories ───────────────────────────────────────────────────────────────
+CATEGORIES = [
+    "Grains & Staples",
+    "Cooking Oils & Ghee",
+    "Spices & Masalas",
+    "Dairy Products",
+    "Snacks & Biscuits",
+    "Beverages",
+    "Personal Care",
+    "Household Cleaning",
+    "Frozen Foods",
+    "Stationery & Misc",
+    "Other",
+]
+
+# ── Add Item form ─────────────────────────────────────────────────────────────
+if "show_add_form" not in st.session_state:
+    st.session_state.show_add_form = False
+
+col_btn, _ = st.columns([2, 8])
+with col_btn:
+    if st.button("➕ Add Item", type="primary"):
+        st.session_state.show_add_form = True
+
+if st.session_state.show_add_form:
+    with st.form("add_item_form", clear_on_submit=True):
+        st.subheader("Add New Item")
+        name = st.text_input("Product Name")
+        category = st.selectbox("Category", CATEGORIES)
+        quantity = st.number_input("Quantity", min_value=0.0, step=1.0)
+        price = st.number_input("Price (₹)", min_value=0.0, step=0.5)
+        threshold = st.number_input("Low-Stock Threshold", min_value=0, step=1)
+
+        col_save, col_cancel = st.columns([1, 1])
+        with col_save:
+            submitted = st.form_submit_button("💾 Save Item", type="primary")
+        with col_cancel:
+            cancelled = st.form_submit_button("Cancel")
+
+        if submitted:
+            if not name.strip():
+                st.error("Product name cannot be empty.")
+            else:
+                database.add_item(name.strip(), category, quantity, price, int(threshold))
+                st.session_state.show_add_form = False
+                st.success(f"✅ '{name}' added to inventory!")
+                st.rerun()
+
+        if cancelled:
+            st.session_state.show_add_form = False
+            st.rerun()
+
 # ── Inventory list ────────────────────────────────────────────────────────────
 st.subheader("📦 Current Inventory")
 

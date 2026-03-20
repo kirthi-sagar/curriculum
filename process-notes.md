@@ -2,6 +2,13 @@
 
 ## /build
 
+### Step 6: Add Item form — form, validation, and save
+- Built: Add Item button, st.form() with 5 fields (name, category dropdown, quantity, price, threshold), empty name validation, save to Supabase, cancel button, success message on save.
+- Verification: Basmati Rice appeared in inventory list. Second item below threshold triggered Low Stock Alert.
+- Knowledge check answer: "it shows an error message" — correct.
+- Issues: None.
+- Learner engagement: None flagged.
+
 ### Step 5: Welcome screen — first-run detection and onboarding banner
 - Built: Welcome banner with 3-step guide and "Get Started" button. Shows only when inventory is empty. Dismissed via session_state. Skipped entirely when items exist.
 - Verification: Banner appeared on empty inventory. "Get Started" dismissed to empty dashboard. Adding a row in Supabase and refreshing kept banner hidden.
