@@ -74,7 +74,7 @@
   Acceptance: App is live at a public `streamlit.app` URL. All features work identically to local. Data persists across browser sessions.
   Verify: Open the live URL in an incognito browser window. Add an item. Close the tab. Reopen — confirm the item is still there.
 
-- [ ] **12. Prepare and record Devpost demo video**
+- [x] **12. Prepare and record Devpost demo video**
   Spec ref: `prd.md > What We're Building` (the core flow to demonstrate)
   What to build: Record a 2-5 minute demo video following this script: (1) 30 sec — slides: "12 million Kirana stores in India are losing customers to quick-commerce. GrocerFlow gives them a digital inventory tool — simple, free, no commission." (2) 3 min — live app: open GrocerFlow, show welcome screen, click Get Started, add Basmati Rice, add Amul Butter below threshold (watch low-stock alert appear), edit Basmati Rice quantity up and down (watch alert appear/disappear), delete Amul Butter (show confirmation + Deleted Items), restore it. (3) 30 sec — close: "This is the first step toward a fully digital Kirana store. Built for owners, not against them." Use clear audio. Show the full browser window. Reference [Devpost's demo video tips](https://info.devpost.com/blog/6-tips-for-making-a-hackathon-demo-video).
   Acceptance: Video is 2-5 minutes. Problem is stated in the first 30 seconds. All core flows are shown working live. Audio is clear. A judge who knows nothing about the project understands what it does and why it matters.

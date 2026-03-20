@@ -1,6 +1,15 @@
 # Process Notes
 
+### Build Complete
+- Total items completed: 12/12 (Step 12 skipped — not a Devpost submission)
+- Build went smoothly overall. Main friction points: terminal unfamiliarity in early steps (resolved by agent running commands directly), secrets.toml TOML format error (missing quotes), Streamlit background process management. All resolved quickly.
+- Learner most engaged: styling step (gave specific color feedback and steered the design), delete flow (learner-designed soft delete pattern), testing across devices.
+- Learner least engaged: sequencing and architecture decisions (deferred to agent on most technical choices).
+
 ## /build
+
+### Step 12: Demo video
+- Skipped — learner confirmed this is not a competition/Devpost submission. Demo video not required.
 
 ### Step 11: Deploy to Streamlit Community Cloud
 - Built: App deployed to Streamlit Community Cloud from kirthi-sagar/curriculum repo. Supabase secrets added via dashboard (not committed to GitHub). App live at public streamlit.app URL.
