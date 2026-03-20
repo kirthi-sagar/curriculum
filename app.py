@@ -157,6 +157,28 @@ if st.session_state.editing_id:
                 st.session_state.editing_id = None
                 st.rerun()
 
+# ── Delete confirmation ───────────────────────────────────────────────────────
+if "confirm_delete_id" not in st.session_state:
+    st.session_state.confirm_delete_id = None
+
+if st.session_state.confirm_delete_id:
+    item_to_delete = next((i for i in items if i["id"] == st.session_state.confirm_delete_id), None)
+    if item_to_delete:
+        st.warning(
+            f"⚠️ Are you sure you want to remove **{item_to_delete['name']}**? "
+            f"It will be moved to Deleted Items."
+        )
+        col_yes, col_no, _ = st.columns([1.5, 1.5, 7])
+        with col_yes:
+            if st.button("✅ Yes, Remove", type="primary"):
+                database.delete_item(st.session_state.confirm_delete_id)
+                st.session_state.confirm_delete_id = None
+                st.rerun()
+        with col_no:
+            if st.button("Cancel"):
+                st.session_state.confirm_delete_id = None
+                st.rerun()
+
 # ── Inventory list ────────────────────────────────────────────────────────────
 st.subheader("📦 Current Inventory")
 
@@ -209,4 +231,6 @@ else:
                 st.session_state.editing_id = item["id"]
                 st.session_state.show_add_form = False
         with col7:
-            st.button("🗑️", key=f"delete_{item['id']}")
+            if st.button("🗑️", key=f"delete_{item['id']}"):
+                st.session_state.confirm_delete_id = item["id"]
+                st.session_state.editing_id = None

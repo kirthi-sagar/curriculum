@@ -50,7 +50,7 @@
   Acceptance: Matches `prd.md > Editing Items` acceptance criteria. Edit form pre-fills all current values. Changes save and reflect immediately. Changing quantity above threshold removes low-stock warning. Changing below threshold adds it.
   Verify: Edit Basmati Rice — change qty to 5 (below threshold 10). Confirm it joins the Low Stock section. Edit again — change qty to 50. Confirm it leaves the Low Stock section automatically.
 
-- [ ] **8. Delete flow — confirmation prompt and soft delete**
+- [x] **8. Delete flow — confirmation prompt and soft delete**
   Spec ref: `spec.md > UI Layer — app.py > Delete Flow`
   What to build: Add a "Delete" button to each inventory row. Clicking sets `st.session_state.confirm_delete_id = item_id`. Render a confirmation prompt: "Are you sure you want to remove [item name]? It will be moved to Deleted Items." with "Yes, Remove" and "Cancel" buttons. "Yes, Remove" calls `delete_item()` (sets `is_deleted=True`), clears state, reruns. "Cancel" clears state, reruns.
   Acceptance: Matches `prd.md > Deleting Items` (soft delete part). Confirmation appears before delete. Item disappears from active inventory after confirm. Cancel does nothing.

@@ -2,6 +2,13 @@
 
 ## /build
 
+### Step 8: Delete flow — confirmation prompt and soft delete
+- Built: Delete button sets confirm_delete_id in session_state. Warning prompt with item name. "Yes, Remove" calls delete_item() (sets is_deleted=True), clears state, reruns. Cancel clears state.
+- Verification: Confirmation prompt appeared. Item disappeared from list after confirm. Supabase row still existed with is_deleted = true.
+- Knowledge check answer: "so the owner can restore it if deleted by mistake" — correct.
+- Issues: None.
+- Learner engagement: None flagged.
+
 ### Step 7: Edit Item form — pre-filled form and update
 - Built: Edit button sets editing_id in session_state. Edit form pre-fills all 5 fields from current item values. Save calls update_item(), clears editing_id, reruns. Low-stock status recalculates automatically.
 - Verification: Edited Basmati Rice qty to 5 — joined Low Stock. Changed back to 50 — left Low Stock automatically.
