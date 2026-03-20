@@ -6,6 +6,24 @@
 - Learner most engaged: styling step (gave specific color feedback and steered the design), delete flow (learner-designed soft delete pattern), testing across devices.
 - Learner least engaged: sequencing and architecture decisions (deferred to agent on most technical choices).
 
+## /evaluate
+
+### Summary scores
+- Scope Clarity: 5/5
+- Requirements Quality: 5/5
+- Technical Decisions: 5/5
+- Spec-to-App Alignment: 4/5 (demo video intentionally skipped — not a competition submission)
+- Process Quality: 4/5
+- **Total: 23/25**
+
+### Learner's reflection answer
+"Add more feature to completely build as much as possible. Also I will build android app next time."
+
+### Final observations
+The learner completed a full spec-driven development cycle from scratch as a complete Python beginner. Most notable growth: early in the process they were uncertain about the terminal and needed scaffolding. By the end, they were actively testing across devices, giving specific design feedback mid-build, and asking sharp product questions. The soft-delete with restore pattern — entirely learner-initiated — was the standout product instinct of the entire project. The Android app ambition signals the learner is thinking beyond the hackathon, which is exactly the right takeaway.
+
+---
+
 ## /build
 
 ### Step 12: Demo video
