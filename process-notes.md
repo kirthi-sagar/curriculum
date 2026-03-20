@@ -2,6 +2,13 @@
 
 ## /build
 
+### Step 9: Deleted Items section — view, restore, and permanent delete
+- Built: st.expander("Deleted Items") fetching is_deleted=True items. Restore button calls restore_item(). Delete Forever sets confirm_perm_delete_id, shows second confirmation, calls perm_delete_item() on confirm.
+- Verification: Deleted item appeared in expander. Restore moved it back to active inventory. Delete Forever with second confirmation removed it completely from Supabase.
+- Knowledge check answer: "Delete is soft delete. Delete forever is permanently deleing from the account" — correct understanding of both operations.
+- Issues: None.
+- Learner engagement: None flagged.
+
 ### Step 8: Delete flow — confirmation prompt and soft delete
 - Built: Delete button sets confirm_delete_id in session_state. Warning prompt with item name. "Yes, Remove" calls delete_item() (sets is_deleted=True), clears state, reruns. Cancel clears state.
 - Verification: Confirmation prompt appeared. Item disappeared from list after confirm. Supabase row still existed with is_deleted = true.

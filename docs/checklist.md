@@ -56,7 +56,7 @@
   Acceptance: Matches `prd.md > Deleting Items` (soft delete part). Confirmation appears before delete. Item disappears from active inventory after confirm. Cancel does nothing.
   Verify: Delete an item. Confirm the confirmation prompt appears. Confirm "Yes, Remove" removes it from the list. Check Supabase Table Editor — confirm the row still exists with `is_deleted = true`.
 
-- [ ] **9. Deleted Items section — view, restore, and permanent delete**
+- [x] **9. Deleted Items section — view, restore, and permanent delete**
   Spec ref: `spec.md > UI Layer — app.py > Deleted Items Section`
   What to build: Add a `st.expander("Deleted Items")` at the bottom of the dashboard. Inside, fetch items where `is_deleted=True`. If empty, show "No deleted items." For each deleted item, show name, category, quantity, price, and two buttons: "Restore" and "Delete Permanently". "Restore" calls `restore_item()`, reruns. "Delete Permanently" sets `st.session_state.confirm_perm_delete_id = item_id`, shows a second confirmation ("This cannot be undone. Delete permanently?"), and calls `perm_delete_item()` on confirm.
   Acceptance: Matches `prd.md > Deleting Items` (restore and permanent delete). Deleted items section shows/hides correctly. Restore moves item back to active inventory. Permanent delete removes it completely with second confirmation.

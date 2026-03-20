@@ -234,3 +234,49 @@ else:
             if st.button("🗑️", key=f"delete_{item['id']}"):
                 st.session_state.confirm_delete_id = item["id"]
                 st.session_state.editing_id = None
+
+# ── Deleted Items section ─────────────────────────────────────────────────────
+if "confirm_perm_delete_id" not in st.session_state:
+    st.session_state.confirm_perm_delete_id = None
+
+st.divider()
+with st.expander("🗂️ Deleted Items"):
+    deleted_items = database.fetch_items(is_deleted=True)
+
+    if not deleted_items:
+        st.info("No deleted items.")
+    else:
+        for item in deleted_items:
+            col1, col2, col3, col4, col5, col6 = st.columns([3, 2, 1.5, 1.5, 1.5, 1.5])
+            col1.write(item["name"])
+            col2.write(item["category"])
+            col3.write(item["quantity"])
+            col4.write(f"₹{item['price']}")
+
+            with col5:
+                if st.button("↩️ Restore", key=f"restore_{item['id']}"):
+                    database.restore_item(item["id"])
+                    st.rerun()
+
+            with col6:
+                if st.button("🗑️ Delete Forever", key=f"perm_{item['id']}"):
+                    st.session_state.confirm_perm_delete_id = item["id"]
+
+        # Permanent delete confirmation
+        if st.session_state.confirm_perm_delete_id:
+            perm_item = next(
+                (i for i in deleted_items if i["id"] == st.session_state.confirm_perm_delete_id),
+                None
+            )
+            if perm_item:
+                st.error(f"⚠️ This cannot be undone. Permanently delete **{perm_item['name']}**?")
+                col_yes, col_no, _ = st.columns([1.5, 1.5, 7])
+                with col_yes:
+                    if st.button("Yes, Delete Forever", type="primary"):
+                        database.perm_delete_item(st.session_state.confirm_perm_delete_id)
+                        st.session_state.confirm_perm_delete_id = None
+                        st.rerun()
+                with col_no:
+                    if st.button("Cancel ", key="cancel_perm"):
+                        st.session_state.confirm_perm_delete_id = None
+                        st.rerun()
