@@ -1,5 +1,21 @@
 # Process Notes
 
+## /build
+
+### Step 2: Supabase table setup and credentials
+- Built: inventory table created in Supabase with all 8 columns. Credentials added to secrets.toml.
+- Verification: Test row inserted and appeared in Table Editor. Row deleted successfully.
+- Knowledge check answer: Asked for an example rather than answering directly. Explained with Basmati Rice example after prompting.
+- Issues: None.
+- Learner engagement: No issues with Supabase dashboard navigation.
+
+### Step 1: Project setup — repo, file structure, and .gitignore
+- Built: app.py, database.py, requirements.txt, .gitignore (with secrets.toml protected), .streamlit/secrets.toml placeholder. All docs artifacts committed too.
+- Verification: Committed and pushed to GitHub fork (kirthi-sagar/curriculum). secrets.toml not in commit.
+- Knowledge check answer: "so that my Supabase credentials are not exposed publicly" — correct and clear.
+- Issues: Learner unfamiliar with running terminal commands; was typing commands in chat. Resolved by running git commands directly via Bash tool.
+- Learner engagement: Asked for help with terminal commands — good self-awareness about being a beginner.
+
 ## /checklist
 
 **Sequencing decisions:**

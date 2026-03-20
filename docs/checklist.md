@@ -8,13 +8,13 @@
 
 ## Checklist
 
-- [ ] **1. Project setup — repo, file structure, and .gitignore**
+- [x] **1. Project setup — repo, file structure, and .gitignore**
   Spec ref: `spec.md > File Structure`
   What to build: Create a GitHub repo named `grocerflow`. Set up the full folder structure: `app.py`, `database.py`, `requirements.txt`, `.gitignore`, `.streamlit/secrets.toml`, and `docs/` folder. Add `.streamlit/secrets.toml` to `.gitignore`. Populate `requirements.txt` with `streamlit==1.55.0` and `supabase==2.28.2`. Leave `app.py` and `database.py` empty for now.
   Acceptance: Folder structure matches `spec.md > File Structure`. `secrets.toml` is listed in `.gitignore`. `requirements.txt` has both dependencies.
   Verify: Open `.gitignore` and confirm `secrets.toml` is listed. Push to GitHub and confirm the repo is visible but `secrets.toml` is not in the commit.
 
-- [ ] **2. Supabase table setup and credentials**
+- [x] **2. Supabase table setup and credentials**
   Spec ref: `spec.md > Data Model > Supabase Table: inventory`
   What to build: In the Supabase dashboard, create a new project (if not already done). In the Table Editor, create a table named `inventory` with these columns: `id` (uuid, primary key, default `gen_random_uuid()`), `name` (text), `category` (text), `quantity` (numeric), `price` (numeric), `threshold` (int4, default 5), `is_deleted` (bool, default false), `created_at` (timestamptz, default `now()`). Copy the project URL and anon key from Project Settings > API. Add them to `.streamlit/secrets.toml` as `SUPABASE_URL` and `SUPABASE_KEY`.
   Acceptance: Table exists in Supabase with all 8 columns. `secrets.toml` has both values filled in.
